@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using MayTinh.Areas.Admin.Models.CategoryNews;
-using MayTinh.Services;
+using PhuKien.Areas.Admin.Models.CategoryNews;
+using PhuKien.Services;
 
-namespace MayTinh.Areas.Admin.Controllers
+namespace PhuKien.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class CategoryNewsController : BaseController

@@ -6,11 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using MayTinh.Areas.Admin.Models.Promotion;
-using MayTinh.Data;
-using MayTinh.Models;
+using PhuKien.Areas.Admin.Models.Promotion;
+using PhuKien.Data;
+using PhuKien.Models;
 
-namespace MayTinh.Services
+namespace PhuKien.Services
 {
     public interface IPromotionService
     {
@@ -28,11 +28,11 @@ namespace MayTinh.Services
     }
     public class PromotionService : IPromotionService
     {
-        private readonly MayTinhContext _context;
+        private readonly PhuKienContext _context;
         private readonly IStorageService _storageService;
         private const string USER_CONTENT_FOLDER_NAME = "uploads";
 
-        public PromotionService(MayTinhContext context, IStorageService storageService)
+        public PromotionService(PhuKienContext context, IStorageService storageService)
         {
             _context = context;
             _storageService = storageService;

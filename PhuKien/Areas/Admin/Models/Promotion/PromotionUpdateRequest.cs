@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace MayTinh.Areas.Admin.Models.Promotion
+namespace PhuKien.Areas.Admin.Models.Promotion
 {
     public class PromotionUpdateRequest
     {

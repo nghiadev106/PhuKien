@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MayTinh.Areas.Admin.Models.CategoryNews
+namespace PhuKien.Areas.Admin.Models.CategoryNews
 {
     public class CategoryNewsRequest
     {

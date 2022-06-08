@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace MayTinh.Data
+namespace PhuKien.Data
 {
-    public partial class MayTinhContext : DbContext
+    public partial class PhuKienContext : DbContext
     {
-        public MayTinhContext()
+        public PhuKienContext()
         {
         }
 
-        public MayTinhContext(DbContextOptions<MayTinhContext> options)
+        public PhuKienContext(DbContextOptions<PhuKienContext> options)
             : base(options)
         {
         }

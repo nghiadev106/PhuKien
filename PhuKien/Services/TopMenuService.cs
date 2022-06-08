@@ -6,11 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using MayTinh.Areas.Admin.Models.TopMenu;
-using MayTinh.Data;
-using MayTinh.Models;
+using PhuKien.Areas.Admin.Models.TopMenu;
+using PhuKien.Data;
+using PhuKien.Models;
 
-namespace MayTinh.Services
+namespace PhuKien.Services
 {
     public interface ITopMenuService
     {
@@ -28,11 +28,11 @@ namespace MayTinh.Services
     }
     public class TopMenuService : ITopMenuService
     {
-        private readonly MayTinhContext _context;
+        private readonly PhuKienContext _context;
         private readonly IStorageService _storageService;
         private const string USER_CONTENT_FOLDER_NAME = "uploads";
 
-        public TopMenuService(MayTinhContext context, IStorageService storageService)
+        public TopMenuService(PhuKienContext context, IStorageService storageService)
         {
             _context = context;
             _storageService = storageService;

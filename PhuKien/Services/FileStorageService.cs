@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MayTinh.Services
+namespace PhuKien.Services
 {
     public interface IStorageService
     {

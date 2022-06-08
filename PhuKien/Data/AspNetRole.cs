@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace MayTinh.Data
+namespace PhuKien.Data
 {
     public partial class AspNetRole
     {

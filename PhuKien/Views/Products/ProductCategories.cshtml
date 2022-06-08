@@ -1,69 +1,113 @@
-﻿@model MayTinh.Models.PaginationSet<MayTinh.Data.Product>
+﻿@model PhuKien.Models.PaginationSet<PhuKien.Data.Product>
 @{
     ViewData["Title"] = "Danh mục sản phẩm";
-    var ListCate = (List<MayTinh.Data.Category>)ViewBag.ListCate;
-    var cate = (MayTinh.Data.Category)ViewBag.category;
+    var ListCate = (List<PhuKien.Data.Category>)ViewBag.ListCate;
+    var cate = (PhuKien.Data.Category)ViewBag.category;
 }
-<!--main area-->
-<main id="main" class="main-site left-sidebar">
 
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-option">
     <div class="container">
-
-        <div class="wrap-breadcrumb">
-            <ul>
-                <li class="item-link"><a href="/" class="link">Trang chủ</a></li>
-                <li class="item-link"><span>@cate.Name</span></li>
-            </ul>
-        </div>
         <div class="row">
-
-            <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
-
-                <div class="banner-shop">
-                    <a href="#" class="banner-link">
-                        <figure><img src="/assets/images/shop-banner.jpg" alt=""></figure>
-                    </a>
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <div class="breadcrumb__links">
+                        <a href="/">Trang chủ</a>
+                        <span>@cate.Name</span>
+                    </div>
                 </div>
-                <div class="row">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+<!-- Shop Section Begin -->
+<section class="shop spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="shop__sidebar">
+                    <div class="shop__sidebar__search">
+                        <form action="/tim-kiem">
+                            <input type="text" name="keyword" placeholder="Tìm kiếm...">
+                            <button type="submit"><span class="icon_search"></span></button>
+                        </form>
+                    </div>
+                    <div class="shop__sidebar__accordion">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseTwo">Danh mục</a>
+                                </div>
+                                <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="shop__sidebar__brand">
+                                            <ul>
+                                                @if (ListCate.Count() > 0)
+                                                {
+                                                    foreach (var item in ListCate)
+                                                    {
+                                                        <li><a href="/danh-muc/@item.Url/@item.Id">@item.Name</a></li>
 
-                    <ul class="product-list grid-products equal-container">
-                        @if (Model.Items.Count() > 0)
-                        {
-                            foreach (var item in Model.Items)
-                            {
-                                <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
-                                    <div class="product product-style-3 equal-elem ">
-                                        <div class="product-thumnail">
-                                            <a href="/san-pham/@item.Url/@item.Id" title="@item.Name">
-                                                <figure><img src="@item.Logo" alt="@item.Name"></figure>
-                                            </a>
-                                        </div>
-                                        <div class="product-info">
-                                            <a href="/san-pham/@item.Url/@item.Id" class="product-name"><span>@item.Name</span></a>
-                                            @if (item.PriceDiscount > 0)
-                                            {
-                                                <div class="wrap-price"><ins><p class="product-price">@item.PriceDiscount</p></ins> <del><p class="product-price">@item.Price</p></del></div>
-                                            }
-                                            else
-                                            {
-                                                <div class="wrap-price"><ins><p class="product-price">@item.Price</p></ins></div>
-
-                                            }
-                                            <button data-id="@item.Id" class="btn add-to-cart btn-add-cart-2">Thêm giỏ hàng</button>
+                                                    }
+                                                }
+                                            </ul>
                                         </div>
                                     </div>
-                                </li>
-                            }
-                        }
-                    </ul>
+                                </div>
+                            </div>
 
+
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="row">
+                    @if (Model.Items.Count() > 0)
+                    {
+                        foreach (var item in Model.Items)
+                        {
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <a href="/san-pham/@item.Url/@item.Id">
+                                        <div class="product__item__pic set-bg" data-setbg="@item.Logo">
+                                            @if (item.IsNew == true)
+                                            {
+                                                <span class="label">New</span>
+                                            }
 
-                <div class="wrap-pagination-info">
-                    <div class="page-numbers">
+                                        </div>
+                                    </a>
+                                    <div class="product__item__text">
+                                        <h6>@item.Name</h6>
+                                        <a data-id="@item.Id" class="add-cart btn-add-cart-2">+ Thêm giỏ hàng</a>
+                                        <div class="rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        @if (item.PriceDiscount > 0)
+                                        {
+                                            <h6>@item.PriceDiscount  <del>@item.Price</del></h6>
+                                        }
+                                        else
+                                        {
+                                            <h6>@item.Price</h6>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
                         @if (Model.TotalPages > 1)
                         {
-                            // Create numeric links
                             var startPageIndex = Math.Max(1, Model.Page - Model.MaxPage / 2);
                             var endPageIndex = Math.Min(Model.TotalPages, Model.Page + Model.MaxPage / 2);
 
@@ -111,68 +155,170 @@
                         }
                     </div>
                 </div>
-            </div><!--end main products area-->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shop Section End -->
+@*<main id="main" class="main-site left-sidebar">
 
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
-                <div class="widget mercado-widget categories-widget">
-                    <h2 class="widget-title">Thương hiệu</h2>
-                    <div class="widget-content">
-                        <ul class="list-category">
-                            @if (ListCate.Count() > 0)
-                            {
-                                foreach (var item in ListCate)
-                                {
-                                    <li class="category-item">
-                                        <a href="/thuong-hieu/@item.Url/@item.Id" class="cate-link">@item.Name</a>
-                                    </li>
-                                }
-                            }
+        <div class="container">
 
-                        </ul>
+            <div class="wrap-breadcrumb">
+                <ul>
+                    <li class="item-link"><a href="/" class="link">Trang chủ</a></li>
+                    <li class="item-link"><span>Shop</span></li>
+                </ul>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
+
+                    <div class="banner-shop">
+                        <a href="#" class="banner-link">
+                            <figure><img src="/assets/images/shop-banner.jpg" alt=""></figure>
+                        </a>
                     </div>
-                </div><!-- Categories widget-->
+                    <div class="row">
 
-                <div class="widget mercado-widget widget-product">
-                    <h2 class="widget-title">Sản phẩm bán chạy</h2>
-                    <div class="widget-content">
-                        <ul class="products">
-
+                        <ul class="product-list grid-products equal-container">
                             @if (Model.Items.Count() > 0)
                             {
-                                foreach (var item in Model.Items.Take(6).ToList())
+                                foreach (var item in Model.Items)
                                 {
-                                    <li class="product-item">
-                                        <div class="product product-widget-style">
-                                            <div class="thumbnnail">
-                                                <a href="/san-pham/@item.Url/@item.Id" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-                                                    <figure><img src="@item.Logo" alt="" /></figure>
+                                    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+                                        <div class="product product-style-3 equal-elem ">
+                                            <div class="product-thumnail">
+                                                <a href="/san-pham/@item.Url/@item.Id" title="@item.Name">
+                                                    <figure><img src="@item.Logo" alt="@item.Name"></figure>
                                                 </a>
                                             </div>
                                             <div class="product-info">
                                                 <a href="/san-pham/@item.Url/@item.Id" class="product-name"><span>@item.Name</span></a>
                                                 @if (item.PriceDiscount > 0)
                                                 {
-                                                    <div class="wrap-price"><span class="product-price">@item.PriceDiscount</span></div>
-
+                                                    <div class="wrap-price"><ins><p class="product-price">@item.PriceDiscount</p></ins> <del><p class="product-price">@item.Price</p></del></div>
                                                 }
                                                 else
-                                                { <div class="wrap-price"><span class="product-price">@item.Price</span></div>
+                                                {
+                                                    <div class="wrap-price"><ins><p class="product-price">@item.Price</p></ins></div>
 
-                                            }
+                                                }
+                                                <button data-id="@item.Id" class="btn add-to-cart btn-add-cart-2">Thêm giỏ hàng</button>
                                             </div>
                                         </div>
                                     </li>
                                 }
                             }
-                        </ul>
+                                </ul>
+
                     </div>
-                </div><!-- brand widget-->
 
-            </div><!--end sitebar-->
+                    <div class="wrap-pagination-info">
+                        <div class="page-numbers">
+                            @if (Model.TotalPages > 1)
+                            {
+                                var startPageIndex = Math.Max(1, Model.Page - Model.MaxPage / 2);
+                                var endPageIndex = Math.Min(Model.TotalPages, Model.Page + Model.MaxPage / 2);
 
-        </div><!--end row-->
+                                <nav>
+                                    <ul class="pagination">
+                                        @if (Model.Page > 1)
+                                        {
+                                            <li class="page-item">
+                                                <a class="page-link" href="?sort=@Model.Sort&pageSize=@Model.PageSize&page=1" aria-label="First">
+                                                    <i class="fa fa-angle-double-left"></i>
+                                                </a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="?sort=@Model.Sort&pageSize=@Model.PageSize&page=@(Model.Page-1)" aria-label="Previous">
+                                                    <i class="fa fa-angle-double-left"></i>
+                                                </a>
+                                            </li>
+                                        }
+                                        @for (int i = startPageIndex; i <= endPageIndex; i++)
+                                        {
+                                            if (Model.Page == i)
+                                            {
+                                                <li class="active page-item"><a class="page-link" href="?sort=@Model.Sort&pageSize=@Model.PageSize&page=@i" title="Trang @i">@i</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li class="page-item"><a class="page-link" href="?sort=@Model.Sort&pageSize=@Model.PageSize&page=@i" title="Trang @i">@i</a></li>
+                                            }
+                                        }
+                                        @if (Model.Page < Model.TotalPages)
+                                        {
+                                            <li class="page-item">
+                                                <a class="page-link" href="?sort=@Model.Sort&pageSize=@Model.PageSize&page=@(Model.Page+1)" aria-label="Next">
+                                                    <i class="fa fa-angle-double-right"></i>
+                                                </a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="?sort=@Model.Sort&pageSize=@Model.PageSize&page=@Model.TotalPages" aria-label="Last">
+                                                    <i class="fa fa-angle-double-right"></i>
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </nav>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
+                    <div class="widget mercado-widget categories-widget">
+                        <h2 class="widget-title">Thương hiệu</h2>
+                        <div class="widget-content">
+                            <ul class="list-category">
+                                @if (ListCate.Count() > 0)
+                                {
+                                    foreach (var item in ListCate)
+                                    {
+                                        <li class="category-item">
+                                            <a href="/thuong-hieu/@item.Url/@item.Id" class="cate-link">@item.Name</a>
+                                        </li>
+                                    } }
 
-    </div><!--end container-->
+                                    </ul>
+                        </div>
+                    </div>
+                    <div class="widget mercado-widget widget-product">
+                        <h2 class="widget-title">Sản phẩm bán chạy</h2>
+                        <div class="widget-content">
+                            <ul class="products">
 
-</main>
-<!--main area-->
+                                @if (Model.Items.Count() > 0)
+                                {
+                                    foreach (var item in Model.Items.Take(6).ToList())
+                                    {
+                                        <li class="product-item">
+                                            <div class="product product-widget-style">
+                                                <div class="thumbnnail">
+                                                    <a href="/san-pham/@item.Url/@item.Id" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
+                                                        <figure><img src="@item.Logo" alt="" /></figure>
+                                                    </a>
+                                                </div>
+                                                <div class="product-info">
+                                                    <a href="/san-pham/@item.Url/@item.Id" class="product-name"><span>@item.Name</span></a>
+                                                    @if (item.PriceDiscount > 0)
+                                                    {
+                                                        <div class="wrap-price"><span class="product-price">@item.PriceDiscount</span></div>
+
+                                                    }
+                                                    else
+                                                    { <div class="wrap-price"><span class="product-price">@item.Price</span></div>
+
+                                                }
+                                                </div>
+                                            </div>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>*@

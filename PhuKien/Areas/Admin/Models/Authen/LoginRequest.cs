@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MayTinh.Areas.Admin.Models.Authen
+namespace PhuKien.Areas.Admin.Models.Authen
 {
     public class LoginRequest
     {

@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace MayTinh.Areas.Admin.Models.News
+namespace PhuKien.Areas.Admin.Models.News
 {
     public class NewsCreateRequest
     {

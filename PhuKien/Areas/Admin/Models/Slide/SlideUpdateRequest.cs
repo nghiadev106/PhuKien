@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace MayTinh.Areas.Admin.Models.Slide
+namespace PhuKien.Areas.Admin.Models.Slide
 {
     public class SlideUpdateRequest
     {

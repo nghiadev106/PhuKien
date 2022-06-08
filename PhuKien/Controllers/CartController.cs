@@ -5,11 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MayTinh.Data;
-using MayTinh.Models;
-using MayTinh.Services;
+using PhuKien.Data;
+using PhuKien.Models;
+using PhuKien.Services;
 
-namespace MayTinh.Controllers
+namespace PhuKien.Controllers
 {
     public class CartController : Controller
     {

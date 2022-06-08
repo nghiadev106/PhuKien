@@ -3,16 +3,16 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using MayTinh.Data;
-using MayTinh.Models;
+using PhuKien.Data;
+using PhuKien.Models;
 
-namespace MayTinh.Controllers
+namespace PhuKien.Controllers
 {
     public class BlogsController : Controller
     {
-        private readonly MayTinhContext _context;
+        private readonly PhuKienContext _context;
 
-        public BlogsController(MayTinhContext context)
+        public BlogsController(PhuKienContext context)
         {      
             _context = context;
         }

@@ -3,24 +3,24 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using MayTinh.Data;
-using MayTinh.Models;
-using MayTinh.Services;
+using PhuKien.Data;
+using PhuKien.Models;
+using PhuKien.Services;
 
-namespace MayTinh.Controllers
+namespace PhuKien.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly MayTinhContext _context;
+        private readonly PhuKienContext _context;
         private readonly IProductService _productService;
 
-        public ProductsController(MayTinhContext context,IProductService productService)
+        public ProductsController(PhuKienContext context,IProductService productService)
         {
             _context = context;
             _productService = productService;
         }
 
-        public async Task<IActionResult> ListProduct(int page = 1, int pageSize = 1)
+        public async Task<IActionResult> ListProduct(int page = 1, int pageSize = 12)
         {
             int totalRow = 0;
             var ListProduct= await _context.Products.Where(x => x.Status == 1).OrderByDescending(x=>x.CreateDate).ToListAsync();
@@ -89,14 +89,14 @@ namespace MayTinh.Controllers
             return View(detail);
         }
 
-        public async Task<IActionResult> Search(string search, int page = 1, int pageSize = 12)
+        public async Task<IActionResult> Search(string keyword, int page = 1, int pageSize = 12)
         {
-            if(search != null)
+            if(keyword != null)
             {
                 try
                 {
                     int totalRow = 0;
-                    string queryString = string.Format("SELECT * FROM Products WHERE dbo.fuConvertToUnsign1(Name) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", search);
+                    string queryString = string.Format("SELECT * FROM Products WHERE dbo.fuConvertToUnsign1(Name) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", keyword);
                     var products = await _context.Products.FromSqlRaw(queryString).ToListAsync();
                     totalRow = products.Count();
                     var sanphams = products.Skip((page - 1) * pageSize).Take(pageSize).ToList();
@@ -107,7 +107,7 @@ namespace MayTinh.Controllers
                         Items = sanphams,
                         MaxPage = 5,
                         Page = page,
-                        Keyword = search,
+                        Keyword = keyword,
                         PageSize = pageSize,
                         TotalCount = totalRow,
                         TotalPages = totalPage

@@ -2,17 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using MayTinh.Data;
-using MayTinh.Models;
+using PhuKien.Data;
+using PhuKien.Models;
 
-namespace MayTinh.ViewComponents
+namespace PhuKien.ViewComponents
 {
     [ViewComponent(Name = "Menu")]
     public class MenuViewComponent : ViewComponent
     {
-        private readonly MayTinhContext _context;
+        private readonly PhuKienContext _context;
 
-        public MenuViewComponent(MayTinhContext context)
+        public MenuViewComponent(PhuKienContext context)
         {
             _context = context;
         }

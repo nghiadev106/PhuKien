@@ -7,10 +7,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using MayTinh.Data;
-using MayTinh.Services;
+using PhuKien.Data;
+using PhuKien.Services;
 
-namespace MayTinh
+namespace PhuKien
 {
     public class Startup
     {
@@ -28,7 +28,7 @@ namespace MayTinh
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDbContext<MayTinhContext>(options =>
+            services.AddDbContext<PhuKienContext>(options =>
               options.UseSqlServer(
                   Configuration.GetConnectionString("DefaultConnection")));
 
@@ -144,7 +144,7 @@ namespace MayTinh
 
                 endpoints.MapControllerRoute(
                  name: "ProductCategories",
-                 pattern: "thuong-hieu/{url}/{id}",
+                 pattern: "danh-muc/{url}/{id}",
                  defaults: new { controller = "Products", action = "ProductCategories" }
                  );
 

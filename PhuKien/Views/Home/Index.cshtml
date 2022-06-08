@@ -2,618 +2,188 @@
     ViewData["Title"] = "Trang chủ";
 
     //Danh sách slides
-    var ListSlides = (List<MayTinh.Data.Slide>)ViewBag.ListSlides;
+    var ListSlides = (List<PhuKien.Data.Slide>)ViewBag.ListSlides;
 
     //Danh sách danh mục sản phẩm
-    var listCategories = (List<MayTinh.Data.Category>)ViewBag.ListCategories;
+    var listCategories = (List<PhuKien.Data.Category>)ViewBag.ListCategories;
     //Danh sách sản phẩm hot
-    var ListProductHot = (List<MayTinh.Data.Product>)ViewBag.ListProductHot;
+    var ListProductHot = (List<PhuKien.Data.Product>)ViewBag.ListProductHot;
     //Danh sách sản phẩm mới
-    var ListProductNew = (List<MayTinh.Data.Product>)ViewBag.ListProductNew;
+    var ListProductNew = (List<PhuKien.Data.Product>)ViewBag.ListProductNew;
 
     //Danh sách tin tức
-    var ListNews = (List<MayTinh.Data.News>)ViewBag.ListNews;
+    var ListNews = (List<PhuKien.Data.News>)ViewBag.ListNews;
 }
 
-
-<!-- BEGIN SLIDER -->
-<div class="page-slider margin-bottom-35">
-    <div id="carousel-example-generic" class="carousel slide carousel-slider">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <!-- First slide -->
-            @if (ListSlides.Count() > 0)
+<!-- Hero Section Begin -->
+<section class="hero">
+    <div class="hero__slider owl-carousel">
+        @if (ListSlides.Count() > 0)
+        {
+            foreach (var item in ListSlides)
             {
-                foreach (var item in ListSlides)
-                {
-                    <div class="item carousel-item-four active">
-                        <div class="container">
-                            <div class="carousel-position-four text-center">
-                                <h2 class="margin-bottom-20 animate-delay carousel-title-v3 border-bottom-title text-uppercase" data-animation="animated fadeInDown">
-                                    Tones of <br /><span class="color-red-v2">Shop UI Features</span><br /> designed
-                                </h2>
-                                <p class="carousel-subtitle-v2" data-animation="animated fadeInUp">
-                                    Lorem ipsum dolor sit amet constectetuer diam <br />
-                                    adipiscing elit euismod ut laoreet dolore.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    }
-                }
-                </div>
+                <div class="hero__items set-bg" data-setbg="@item.Logo">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-7 col-md-8">
+                                <div class="hero__text">
+                                    <h6>@item.Name</h6>
 
-        <!-- Controls -->
-        <a class="left carousel-control carousel-control-shop" href="#carousel-example-generic" role="button" data-slide="prev">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-        </a>
-        <a class="right carousel-control carousel-control-shop" href="#carousel-example-generic" role="button" data-slide="next">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-        </a>
-    </div>
-</div>
-<!-- END SLIDER -->
-
-<div class="main">
-    <div class="container">
-        <!-- BEGIN SALE PRODUCT & NEW ARRIVALS -->
-        <div class="row margin-bottom-40">
-            <!-- BEGIN SALE PRODUCT -->
-            <div class="col-md-12 sale-product">
-                <h2>New Arrivals</h2>
-                <div class="owl-carousel owl-carousel5">
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/model1.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/model1.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                            <div class="sticker sticker-sale"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/model2.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/model2.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress2</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/model6.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/model6.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress2</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/model4.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/model4.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="javascript:;">Berry Lace Dress4</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                            <div class="sticker sticker-new"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/model5.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/model5.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress5</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/model3.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/model3.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress3</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/model7.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/model7.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress3</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END SALE PRODUCT -->
-        </div>
-        <!-- END SALE PRODUCT & NEW ARRIVALS -->
-        <!-- BEGIN SIDEBAR & CONTENT -->
-        <div class="row margin-bottom-40 ">
-            <!-- BEGIN SIDEBAR -->
-            <div class="sidebar col-md-3 col-sm-4">
-                <ul class="list-group margin-bottom-25 sidebar-menu">
-                    <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Ladies</a></li>
-                    <li class="list-group-item clearfix dropdown">
-                        <a href="shop-product-list.html">
-                            <i class="fa fa-angle-right"></i>
-                            Mens
-
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="list-group-item dropdown clearfix">
-                                <a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Shoes </a>
-                                <ul class="dropdown-menu">
-                                    <li class="list-group-item dropdown clearfix">
-                                        <a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Classic </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Classic 1</a></li>
-                                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Classic 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="list-group-item dropdown clearfix">
-                                        <a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Sport  </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Sport 1</a></li>
-                                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Sport 2</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Trainers</a></li>
-                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Jeans</a></li>
-                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Chinos</a></li>
-                            <li><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> T-Shirts</a></li>
-                        </ul>
-                    </li>
-                    <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Kids</a></li>
-                    <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Accessories</a></li>
-                    <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Sports</a></li>
-                    <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Brands</a></li>
-                    <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Electronics</a></li>
-                    <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Home & Garden</a></li>
-                    <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Custom Link</a></li>
-                </ul>
-            </div>
-            <!-- END SIDEBAR -->
-            <!-- BEGIN CONTENT -->
-            <div class="col-md-9 col-sm-8">
-                <h2>Three items</h2>
-                <div class="owl-carousel owl-carousel3">
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/k1.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/k1.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                            <div class="sticker sticker-new"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/k2.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/k2.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress2</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/k3.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/k3.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress3</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/k4.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/k4.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress4</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                            <div class="sticker sticker-sale"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/k1.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/k1.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress5</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/k2.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/k2.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress6</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END CONTENT -->
-        </div>
-        <!-- END SIDEBAR & CONTENT -->
-        <!-- BEGIN TWO PRODUCTS & PROMO -->
-        <div class="row margin-bottom-35 ">
-            <!-- BEGIN TWO PRODUCTS -->
-            <div class="col-md-6 two-items-bottom-items">
-                <h2>Two items</h2>
-                <div class="owl-carousel owl-carousel2">
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/k4.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/k4.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/k2.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/k2.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/k3.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/k3.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/k1.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/k1.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/k4.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/k4.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-item">
-                            <div class="pi-img-wrapper">
-                                <img src="/assets/pages/img/products/k3.jpg" class="img-responsive" alt="Berry Lace Dress">
-                                <div>
-                                    <a href="/assets/pages/img/products/k3.jpg" class="btn btn-default fancybox-button">Zoom</a>
-                                    <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
-                                </div>
-                            </div>
-                            <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
-                            <div class="pi-price">$29.00</div>
-                            <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END TWO PRODUCTS -->
-            <!-- BEGIN PROMO -->
-            <div class="col-md-6 shop-index-carousel">
-                <div class="content-slider">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="/assets/pages/img/index-sliders/slide1.jpg" class="img-responsive" alt="Berry Lace Dress">
-                            </div>
-                            <div class="item">
-                                <img src="/assets/pages/img/index-sliders/slide2.jpg" class="img-responsive" alt="Berry Lace Dress">
-                            </div>
-                            <div class="item">
-                                <img src="/assets/pages/img/index-sliders/slide3.jpg" class="img-responsive" alt="Berry Lace Dress">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END PROMO -->
-        </div>
-        <!-- END TWO PRODUCTS & PROMO -->
-    </div>
-</div>
-
-
-@*<main id="main">
-        <div class="container">
-
-            <div class="wrap-main-slide">
-                <div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
-                    @if (ListSlides.Count() > 0)
-                    {
-                        foreach (var item in ListSlides)
-                        {
-                            <div class="item-slide">
-                                <img src="@item.Logo" alt="" class="img-slide">
-
-                            </div>
-                        }
-                    }
-                </div>
-            </div>
-            <div class="wrap-banner style-twin-default">
-                @if (ListSlides.Count() > 0)
-                {
-                    foreach (var item in ListSlides.Take(2).ToList())
-                    {
-                        <div class="banner-item">
-                            <a href="#" class="link-banner banner-effect-1">
-                                <figure><img src="@item.Logo" alt="" width="580" height="190"></figure>
-                            </a>
-                        </div>
-                    }
-                }
-
-            </div>
-            <div class="wrap-show-advance-info-box style-1 has-countdown">
-                <h3 class="title-box">Sản phẩm nổi bật</h3>
-                <div class="wrap-countdown mercado-countdown" data-expire="2020/12/12 12:34:56"></div>
-                <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                    @if (ListProductHot.Count() > 0)
-                    {
-                        foreach (var item in ListProductHot)
-                        {
-                            <div class="product product-style-2 equal-elem ">
-                                <div class="product-thumnail">
-                                    <a href="/san-pham/@item.Url/@item.Id" title="@item.Name">
-                                        <figure><img src="@item.Logo" width="800" height="800" alt="@item.Name"></figure>
-                                    </a>
-                                    @if (item.PriceDiscount > 0)
-                                    {
-                                        <div class="group-flash">
-                                            <span class="flash-item sale-label">sale</span>
-                                        </div>
-                                    }
-                                    <div class="wrap-btn">
-                                        <a href="/san-pham/@item.Url/@item.Id" class="function-link">quick view</a>
+                                    <div class="hero__social">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
                                     </div>
                                 </div>
-                                <div class="product-info">
-                                    <a href="/san-pham/@item.Url/@item.Id" class="product-name"><span>@item.Name</span></a>
-                                    @if (item.PriceDiscount > 0)
-                                    {
-                                        <div class="wrap-price"><ins><p class="product-price">@item.PriceDiscount</p></ins> <del><p class="product-price">@item.Price</p></del></div>
-                                    }
-                                    else
-                                    {
-                                        <div class="wrap-price"><ins><p class="product-price">@item.Price</p></ins></div>
-
-                                    }
-                                </div>
-                            </div>
-
-                        }
-                    }
-
-                </div>
-            </div>
-
-            <div class="wrap-show-advance-info-box style-1">
-                <h3 class="title-box">Sản phẩm mới nhất</h3>
-                <div class="wrap-top-banner">
-                    <a href="#" class="link-banner banner-effect-2">
-                        <figure><img src="/assets/images/digital-electronic-banner.jpg" width="1170" height="240" alt=""></figure>
-                    </a>
-                </div>
-                <div class="wrap-products">
-                    <div class="wrap-product-tab tab-style-1">
-                        <div class="tab-contents">
-                            <div class="tab-content-item active" id="digital_1a">
-                                <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                                    @if (ListProductNew.Count() > 0)
-                                    {
-                                        foreach (var item in ListProductNew)
-                                        {
-                                            <div class="product product-style-2 equal-elem ">
-                                                <div class="product-thumnail">
-                                                    <a href="/san-pham/@item.Url/@item.Id" title="@item.Name">
-                                                        <figure><img src="@item.Logo" width="800" height="800" alt="@item.Name"></figure>
-                                                    </a>
-                                                    @if (item.PriceDiscount > 0)
-                                                    {
-                                                        <div class="group-flash">
-                                                            <span class="flash-item sale-label">sale</span>
-                                                        </div>
-                                                    }
-                                                    <div class="wrap-btn">
-                                                        <a href="/san-pham/@item.Url/@item.Id" class="function-link">quick view</a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-info">
-                                                    <a href="/san-pham/@item.Url/@item.Id" class="product-name"><span>@item.Name</span></a>
-                                                    @if (item.PriceDiscount > 0)
-                                                    {
-                                                        <div class="wrap-price"><ins><p class="product-price">@item.PriceDiscount</p></ins> <del><p class="product-price">@item.Price</p></del></div>
-                                                    }
-                                                    else
-                                                    {
-                                                        <div class="wrap-price"><ins><p class="product-price">@item.Price</p></ins></div>
-
-                                                    }
-                                                </div>
-                                            </div>
-
-                                        }
-                                    }
-
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+            }
+        }
+    </div>
+</section>
+<!-- Hero Section End -->
+<!-- Product Section Begin -->
+<section class="product spad" style="margin-top:20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="filter__controls">
+                    <li class="active" data-filter="*">Sản phẩm nổi bật</li>
+
+                </ul>
             </div>
-
-            <div class="wrap-show-advance-info-box style-1">
-                <h3 class="title-box">Tin tức</h3>
-                <div class="wrap-top-banner">
-                    <a href="#" class="link-banner banner-effect-2">
-                        <figure><img src="/assets/images/fashion-accesories-banner.jpg" width="1170" height="240" alt=""></figure>
-                    </a>
-                </div>
-                <div class="wrap-products">
-                    <div class="wrap-product-tab tab-style-1">
-                        <div class="tab-contents">
-                            <div class="tab-content-item active" id="digital_1a">
-                                <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
-
-                                    @if (ListNews.Count() > 0)
-                                    {
-                                        foreach (var item in ListNews)
-                                        {
-                                            <div class="product product-style-2 equal-elem ">
-                                                <div class="product-thumnail">
-                                                    <a href="/tin-tuc/@item.Url/@item.Id" title="@item.Name">
-                                                        <figure><img src="@item.Logo" width="800" height="800" alt="@item.Name"></figure>
-                                                    </a>
-                                                    <div class="wrap-btn">
-                                                        <a href="/tin-tuc/@item.Url/@item.Id" class="function-link">quick view</a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-info">
-                                                    <a href="/tin-tuc/@item.Url/@item.Id" class="product-name"><span>@item.Name</span></a>
-                                                </div>
-                                            </div>
-
-                                        }
-                                    }
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
+        <div class="row product__filter">
 
-    </main>*@
+            @if (ListProductHot.Count() > 0)
+            {
+                foreach (var item in ListProductHot)
+                {
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        <div class="product__item">
+                            <a href="/san-pham/@item.Url/@item.Id">
+                                <div class="product__item__pic set-bg" data-setbg="@item.Logo">
+                                    @if (item.IsNew == true)
+                                    {
+                                        <span class="label">New</span>
+                                    }
+
+                                </div>
+                            </a>
+                            <div class="product__item__text">
+                                <h6>@item.Name</h6>
+                                <a data-id="@item.Id" class="add-cart btn-add-cart-2">+ Thêm giỏ hàng</a>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                @if (item.PriceDiscount > 0)
+                                {
+                                    <h6>@item.PriceDiscount  <del>@item.Price</del></h6>
+                                }
+                                else
+                                {
+                                    <h6>@item.Price</h6>
+                                }
+                                
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>
+<!-- Product Section End -->
+<!-- Product Section Begin -->
+<section class="product spad" style="margin-top:20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="filter__controls">
+                    <li class="active" data-filter="*">Sản phẩm mới</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="row product__filter">
+
+            @if (ListProductNew.Count() > 0)
+            {
+                foreach (var item in ListProductNew)
+                {
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        <div class="product__item">
+                            <a href="/san-pham/@item.Url/@item.Id">
+                                <div class="product__item__pic set-bg" data-setbg="@item.Logo">
+                                    @if (item.IsNew == true)
+                                    {
+                                        <span class="label">New</span>
+                                    }
+
+                                </div>
+                            </a>
+                            <div class="product__item__text">
+                                <h6>@item.Name</h6>
+                                <a data-id="@item.Id" class="add-cart btn-add-cart-2">+ Thêm giỏ hàng</a>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                @if (item.PriceDiscount > 0)
+                                {
+                                    <h6>@item.PriceDiscount  <del>@item.Price</del></h6>
+                                }
+                                else
+                                {
+                                    <h6>@item.Price</h6>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>
+<!-- Product Section End --><!-- Latest Blog Section Begin -->
+<section class="latest spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Tin tức</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @if (ListNews.Count() > 0)
+            {
+                foreach (var item in ListNews)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="blog__item">
+                            <div class="blog__item__pic set-bg" data-setbg="@item.Logo"></div>
+                            <div class="blog__item__text">
+                                <span><img src="/assets/img/icon/calendar.png" alt="">@item.CreateDate.Value.ToString("dd/MM/yyyy")</span>
+                                <h5>@item.Name</h5>
+                                <a href="/tin-tuc/@item.Url/@item.Id">Xem thêm</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>

@@ -2,11 +2,11 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using MayTinh.Areas.Admin.Models.Category;
-using MayTinh.Models;
-using MayTinh.Services;
+using PhuKien.Areas.Admin.Models.Category;
+using PhuKien.Models;
+using PhuKien.Services;
 
-namespace MayTinh.Areas.Admin.Controllers
+namespace PhuKien.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class CategoryController : BaseController

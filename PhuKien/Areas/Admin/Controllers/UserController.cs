@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
-using MayTinh.Areas.Admin.Models.Authen;
+using PhuKien.Areas.Admin.Models.Authen;
 
-namespace MayTinh.Areas.Admin.Controllers
+namespace PhuKien.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class UserController : Controller

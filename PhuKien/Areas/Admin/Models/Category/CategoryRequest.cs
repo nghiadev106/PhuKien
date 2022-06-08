@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MayTinh.Areas.Admin.Models.Category
+namespace PhuKien.Areas.Admin.Models.Category
 {
     public class CategoryRequest
     {

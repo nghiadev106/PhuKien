@@ -6,12 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MayTinh.Areas.Admin.Models.Order;
-using MayTinh.Data;
-using MayTinh.Models;
-using MayTinh.Services;
+using PhuKien.Areas.Admin.Models.Order;
+using PhuKien.Data;
+using PhuKien.Models;
+using PhuKien.Services;
 
-namespace MayTinh.Areas.Admin.Controllers
+namespace PhuKien.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class OrderController : BaseController

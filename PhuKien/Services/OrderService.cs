@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using MayTinh.Areas.Admin.Models.Order;
-using MayTinh.Data;
-using MayTinh.Models;
+using PhuKien.Areas.Admin.Models.Order;
+using PhuKien.Data;
+using PhuKien.Models;
 
-namespace MayTinh.Services
+namespace PhuKien.Services
 {
     public interface IOrderService
     {
@@ -25,9 +25,9 @@ namespace MayTinh.Services
     }
     public class OrderService: IOrderService
     {
-        private readonly MayTinhContext _context;
+        private readonly PhuKienContext _context;
 
-        public OrderService(MayTinhContext context)
+        public OrderService(PhuKienContext context)
         {
             _context = context;
         }

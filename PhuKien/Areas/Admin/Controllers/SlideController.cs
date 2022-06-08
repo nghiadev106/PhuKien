@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using MayTinh.Areas.Admin.Models.Slide;
-using MayTinh.Services;
+using PhuKien.Areas.Admin.Models.Slide;
+using PhuKien.Services;
 
-namespace MayTinh.Areas.Admin.Controllers
+namespace PhuKien.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class SlideController : BaseController

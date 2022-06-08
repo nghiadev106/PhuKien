@@ -14,20 +14,20 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "D:\nghia\DoAnTotNghiep2022\Hoàng\PhuKien\PhuKien\Views\_ViewImports.cshtml"
-using MayTinh;
+using PhuKien;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 2 "D:\nghia\DoAnTotNghiep2022\Hoàng\PhuKien\PhuKien\Views\_ViewImports.cshtml"
-using MayTinh.Models;
+using PhuKien.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4344d3af72afea08a6fb870f81af17660ae4b822", @"/Views/Home/About.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4ccc0fe1c0961240b5ee8476c8dce1d3a42796aa", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cdae5b648276f2aeba37a008a47c34c89b500854", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_About : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

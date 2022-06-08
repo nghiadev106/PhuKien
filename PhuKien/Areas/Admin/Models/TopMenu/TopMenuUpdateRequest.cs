@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace MayTinh.Areas.Admin.Models.TopMenu
+namespace PhuKien.Areas.Admin.Models.TopMenu
 {
     public class TopMenuUpdateRequest
     {

@@ -1,9 +1,9 @@
-﻿@model MayTinh.Areas.Admin.Models.Order.StatusRequest
+﻿@model PhuKien.Areas.Admin.Models.Order.StatusRequest
 @{
     ViewData["Title"] = "Detail";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
-    var order = (MayTinh.Data.Order)ViewBag.order;
-    var orderDetails = (List<MayTinh.Models.OrderDetailViewModel>)ViewBag.orderDetails;
+    var order = (PhuKien.Data.Order)ViewBag.order;
+    var orderDetails = (List<PhuKien.Models.OrderDetailViewModel>)ViewBag.orderDetails;
 }
 
 <div class="container-fluid">

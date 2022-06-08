@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MayTinh.Data;
+using PhuKien.Data;
 
-namespace MayTinh.Models
+namespace PhuKien.Models
 {
     public class MenuViewModel
     {

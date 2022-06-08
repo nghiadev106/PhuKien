@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using MayTinh.Areas.Admin.Models.Promotion;
-using MayTinh.Services;
+using PhuKien.Areas.Admin.Models.Promotion;
+using PhuKien.Services;
 
-namespace MayTinh.Areas.Admin.Controllers
+namespace PhuKien.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class PromotionController : BaseController

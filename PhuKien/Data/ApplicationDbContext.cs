@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace MayTinh.Data
+namespace PhuKien.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using MayTinh.Data;
+using PhuKien.Data;
 
-namespace MayTinh.Areas.Admin.Models.Product
+namespace PhuKien.Areas.Admin.Models.Product
 {
     public class ProductUpdateRequest
     {

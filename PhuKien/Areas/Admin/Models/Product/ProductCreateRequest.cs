@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace MayTinh.Areas.Admin.Models.Product
+namespace PhuKien.Areas.Admin.Models.Product
 {
     public class ProductCreateRequest
     {

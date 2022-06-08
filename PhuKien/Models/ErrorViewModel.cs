@@ -1,6 +1,6 @@
 using System;
 
-namespace MayTinh.Models
+namespace PhuKien.Models
 {
     public class ErrorViewModel
     {

@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MayTinh.Areas.Admin.Models.Category;
-using MayTinh.Data;
-using MayTinh.Models;
+using PhuKien.Areas.Admin.Models.Category;
+using PhuKien.Data;
+using PhuKien.Models;
 
-namespace MayTinh.Services
+namespace PhuKien.Services
 {
     public interface ICategoryService
     {
@@ -27,9 +27,9 @@ namespace MayTinh.Services
     }
     public class CategoryService : ICategoryService
     {
-        private readonly MayTinhContext _context;
+        private readonly PhuKienContext _context;
 
-        public CategoryService(MayTinhContext context)
+        public CategoryService(PhuKienContext context)
         {
             _context = context;
         }

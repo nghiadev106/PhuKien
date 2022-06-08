@@ -5,17 +5,17 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using MayTinh.Data;
-using MayTinh.Models;
+using PhuKien.Data;
+using PhuKien.Models;
 
-namespace MayTinh.Controllers
+namespace PhuKien.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly MayTinhContext _context;
+        private readonly PhuKienContext _context;
 
-        public HomeController(ILogger<HomeController> logger, MayTinhContext context)
+        public HomeController(ILogger<HomeController> logger, PhuKienContext context)
         {
             _logger = logger;
             _context = context;
