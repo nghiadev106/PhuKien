@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\nghia\\DoAnTotNghiep2022\\Hoàng\\PhuKien\\PhuKien\\PhuKien.csproj": {}
+    "D:\\DA\\PhuKien\\PhuKien\\PhuKien.csproj": {}
   },
   "projects": {
-    "D:\\nghia\\DoAnTotNghiep2022\\Hoàng\\PhuKien\\PhuKien\\PhuKien.csproj": {
+    "D:\\DA\\PhuKien\\PhuKien\\PhuKien.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\nghia\\DoAnTotNghiep2022\\Hoàng\\PhuKien\\PhuKien\\PhuKien.csproj",
+        "projectUniqueName": "D:\\DA\\PhuKien\\PhuKien\\PhuKien.csproj",
         "projectName": "PhuKien",
-        "projectPath": "D:\\nghia\\DoAnTotNghiep2022\\Hoàng\\PhuKien\\PhuKien\\PhuKien.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\nghia\\DoAnTotNghiep2022\\Hoàng\\PhuKien\\PhuKien\\obj\\",
+        "projectPath": "D:\\DA\\PhuKien\\PhuKien\\PhuKien.csproj",
+        "packagesPath": "C:\\Users\\DreamStore\\.nuget\\packages\\",
+        "outputPath": "D:\\DA\\PhuKien\\PhuKien\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DreamStore\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

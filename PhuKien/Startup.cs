@@ -119,14 +119,6 @@ namespace PhuKien
                 });
 
                 endpoints.MapControllerRoute(
-               name: "SearchAdvand",
-               pattern: "tim-kiem-chi-tiet", new
-               {
-                   controller = "Products",
-                   action = "SearchAdvand"
-               });
-
-                endpoints.MapControllerRoute(
                name: "Search",
                pattern: "tim-kiem", new
                {
@@ -152,24 +144,24 @@ namespace PhuKien
                 name: "Blog",
                 pattern: "tin-tuc", new
                 {
-                    controller = "Blogs",
-                    action = "ListBlogs"
+                    controller = "News",
+                    action = "ListNews"
                 });
 
                 endpoints.MapControllerRoute(
                 name: "Blog Detail",
                 pattern: "tin-tuc/{url}/{id}", new
                 {
-                    controller = "Blogs",
-                    action = "DetailBlog"
+                    controller = "News",
+                    action = "Detail"
                 });
 
                 endpoints.MapControllerRoute(
-               name: "Blog by category",
+               name: "news by category",
                pattern: "chuyen-muc/{url}/{id}", new
                {
-                   controller = "Blogs",
-                   action = "ListBlogCategories"
+                   controller = "News",
+                   action = "Category"
                });
 
 
@@ -178,11 +170,11 @@ namespace PhuKien
                  pattern: "san-pham/{url}/{id}", new
                  {
                      controller = "Products",
-                     action = "DetailProduct"
+                     action = "Detail"
                  });
 
                 endpoints.MapControllerRoute(
-                 name: "Product Detail",
+                 name: "contact",
                  pattern: "lien-he", new
                  {
                      controller = "Home",

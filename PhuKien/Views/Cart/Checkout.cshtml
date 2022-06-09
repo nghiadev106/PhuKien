@@ -1,54 +1,78 @@
 ﻿@model PhuKien.Models.OrderViewModel
 
-<!--main area-->
-<main id="main" class="main-site">
-
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-option">
     <div class="container">
-
-        <div class="wrap-breadcrumb">
-            <ul>
-                <li class="item-link"><a href="#" class="link">home</a></li>
-                <li class="item-link"><span>login</span></li>
-            </ul>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <div class="breadcrumb__links">
+                        <a href="/">Home</a>
+                        <a href="/gio-hang">Giỏ hàng</a>
+                        <span>Thanh toán</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class=" main-content-area">
-            <div class="wrap-address-billing">
-                <h3 class="box-title">Billing Address</h3>
-                <form action="/Cart/Checkout" method="post" name="frm-billing">
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+<!-- Checkout Section Begin -->
+<section class="checkout spad">
+    <div class="container">
+        <div class="checkout__form">
+            <form action="/Cart/Checkout" method="post">
+                <div class="row">
+                    <div class="col-lg-8 col-md-6">
+                        <h6 class="checkout__title">Thông tin người mua</h6>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Họ tên<span>*</span></p>
+                                    <input type="text" asp-for="OrderName" />
+                                    <span asp-validation-for="OrderName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Số điện thoại<span>*</span></p>
+                                    <input type="number" asp-for="OrderPhone" />
+                                    <span asp-validation-for="OrderName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Email<span>*</span></p>
+                            <input type="email" asp-for="OrderEmail" />
+                            <span asp-validation-for="OrderEmail" class="text-danger"></span>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Địa chỉ<span>*</span></p>
+                            <input type="text" asp-for="OrderAddress" />
+                            <span asp-validation-for="OrderAddress" class="text-danger"></span>
+                        </div>
 
-                    <p class="row-in-form">
-                        <label for="fname">Họ và tên<span>*</span></label>
-                        <input id="fname" type="text" asp-for="OrderName" value="" placeholder="Họ và tên" style="margin-right:20px;">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="lname">Số điện thoại<span>*</span></label>
-                        <input id="lname" type="number" asp-for="OrderPhone" value="" placeholder="Số điện thoại">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="email">Email:</label>
-                        <input id="email" type="email" asp-for="OrderEmail" value="" placeholder="email" style="margin-right:20px;">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="phone">Địa chỉ<span>*</span></label>
-                        <input id="phone" type="text" asp-for="OrderAddress" value="" placeholder="Địa chỉ">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="phone">Ghi chú<span>*</span></label>
-                        <input id="phone" type="text" asp-for="OrderNote" value="" placeholder="Ghi chú">
-                    </p>
-                    <div class="summary summary-checkout">
-                        <div class="summary-item payment-method">
-                            <h4 class="title-box">Thanh toán ngay</h4>
-
-                            <p class="summary-info grand-total"><span>Tổng thanh toán</span> <span class="grand-total-price lbl_total"></span></p>
-                            <input type="submit" value="Đặt hàng" class="btn btn-medium">
+                        <div class="checkout__input">
+                            <p>Ghi chú<span>*</span></p>
+                            <input type="text" asp-for="OrderNote" placeholder="ghi chú">
+                            <span asp-validation-for="OrderNote" class="text-danger"></span>
                         </div>
                     </div>
-                </form>
-
-            </div>          
-        </div><!--end main content area-->
-    </div><!--end container-->
-
-</main>
-<!--main area-->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="checkout__order">
+                            <h4 class="order__title">Tổng tiền</h4>
+                          
+                            <ul class="checkout__total__all">
+                                <li>Phí ship <span>Miễn phí</span></li>
+                                <li>Tổng tiền <span class="lbl_total"></span></li>
+                            </ul>
+                         
+                            <button type="submit" class="site-btn">Đặt hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- Checkout Section End -->

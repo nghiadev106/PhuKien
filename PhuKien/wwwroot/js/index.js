@@ -26,28 +26,31 @@
                         amount = item.price * item.quantity;
                     } 
                     html += `
-<li class="pr-cart-item">
-                                            <div class="product-image">
-                                                <figure><img src="` + item.logo + `" alt=""></figure>
-                                            </div>
-                                            <div class="product-name">
-                                                <a class="link-to-product" href="/san-pham/`+ item.url + `/` + item.productId + `">` + item.name + `</a>
-                                            </div>
-                                            <div class="price-field produtc-price"><p class="price">` + numberWithCommas(item.price) + `&nbsp</p></div>
-                                            <div class="quantity">
-                                                <div class="quantity-input">
-                                                    <input type="text" name="product-quatity"   id="quantity_` + item.productId + `"   value="`+ item.quantity + `" data-max="120" pattern="[0-9]*">
-                                                    <a class="btn btn-increase qty-increase-cart" data-id="` + item.productId + `"></a>
-                                                    <a class="btn btn-reduce qty-decrease-cart" data-id="` + item.productId + `"></a>
-                                                </div>
-                                            </div>
-                                            <div class="price-field sub-total"><p class="price">` + numberWithCommas(amount) + `&nbsp;</p></div>
-                                            <div class="delete">
-                                                <a class="remove removeItem" data-id="` + item.productId + `" class="btn btn-delete" title="">
-                                                    <i class="fa fa-times-circle" aria-hidden="true"></i>
-                                                </a>
-                                            </div>
-                                        </li>
+
+
+                                                                                                <tr>
+                                                                                                    <td class="product__cart__item">
+                                                                                                        <div class="product__cart__item__pic">
+                                                                                                            <img src="` + item.logo + `" alt="">
+                                                                                                        </div>
+                                                                                                        <div class="product__cart__item__text">
+                                                                                                            <h6>` + item.name + `</h6>
+                                                                                                            <h5>` + numberWithCommas(item.price) + `</h5>
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                    <td class="quantity__item">
+                                                                                                        <div class="quantity">
+                                                                                                            <div class="pro-qty-2">
+                                                                                                                <input type="text"  id="quantity_` + item.productId + `"    value="` + item.quantity + `">
+                                                    <a class="btn btn-reduce qty-decrease-cart" data-id="` + item.productId + `">-</a>
+
+                                                <a class="btn btn-increase qty-increase-cart" data-id="` + item.productId + `">+</a>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                    <td class="cart__price">` + numberWithCommas(amount) + `</td>
+                                                                                                    <td class="cart__close"><i class="fa fa-close removeItem" data-id="` + item.productId + `" ></i></td>
+                                                                                                </tr>
 
  
 `;
@@ -158,24 +161,18 @@
 
         $('body').on('click', '.qty-increase-product', function () {
             var qty_el = $("#input-quantity").val();
-            var price = Number($("#price").val());
             var qty = parseInt(qty_el);
-            if (!isNaN(qty) && !isNaN(price)) {
+            if (!isNaN(qty)) {
                 qty++;
-                var subTotal = price * qty;
-                $(".sub-total").text(numberWithCommas(subTotal));  
                 $("#input-quantity").val(qty);
             }
         });
 
         $('body').on('click', '.qty-decrease-product', function () {
             var qty_el = $("#input-quantity").val();
-            var price = Number($("#price").val());
             var qty = parseInt(qty_el);
-            if (!isNaN(qty) && !isNaN(price) && qty > 1) {
+            if (!isNaN(qty) && qty > 1) {
                 qty--;
-                var subTotal = price * qty;
-                $(".sub-total").text(numberWithCommas(subTotal));
                 $("#input-quantity").val(qty);
             }
         });

@@ -1,0 +1,42 @@
+﻿@model PhuKien.Data.News
+@{
+    ViewData["Title"] = "Chi tiết tin";
+    var categories = (List<PhuKien.Data.CategoriesNew>)ViewBag.categories;
+    var relatedNews = (List<PhuKien.Data.News>)ViewBag.relatedNews;
+    var ListNews = (List<PhuKien.Data.News>)ViewBag.ListNews;
+}
+
+<section class="blog-hero spad">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-9 text-center">
+                <div class="blog__hero__text">
+                    <h2>@Model.Name</h2>
+                    <ul>
+                        <li>By Huy Hoàng</li>
+                        <li>@Model.CreateDate.Value.ToString("dd/MM/yyyy")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="blog-details spad">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            @*<div class="col-lg-12">
+                <div class="blog__details__pic">
+                    <img style="width:100%" src="@Model.Logo" alt="">
+                </div>
+            </div>*@
+            <div class="col-lg-12">
+                <div class="blog__details__content">       
+                    <div class="blog__details__text">
+                        @Html.Raw(Model.Detail)
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

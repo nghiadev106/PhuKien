@@ -4,63 +4,104 @@
 
 @if (currentCart != null && currentCart.Length > 2)
 {
-    <!--main area-->
-                    <main id="main" class="main-site">
-
+    <!-- Breadcrumb Section Begin -->
+                    <section class="breadcrumb-option">
                         <div class="container">
-
-                            <div class="wrap-breadcrumb">
-                                <ul>
-                                    <li class="item-link"><a href="#" class="link">Trang chủ</a></li>
-                                    <li class="item-link"><span>Giỏ hàng</span></li>
-                                </ul>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="breadcrumb__text">
+                                        <div class="breadcrumb__links">
+                                            <a href="/">Trang chủ</a>
+                                            <a href="/shop">Shop</a>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class=" main-content-area">
-
-                                <div class="wrap-iten-in-cart">
-                                    <h3 class="box-title">Sản phẩm</h3>
-                                    <ul class="products-cart ListCart">
-
-                                       
-                                    </ul>
-                                </div>
-
-                                <div class="summary">
-                                    <div class="order-summary">
-                                        <p class="summary-info"><span class="title">Shipping</span><b class="index">Miễn phí</b></p>
-                                        <p class="summary-info total-info "><span class="title">Tổng tiền</span><b class="index lbl_total"></b></p>
-                                    </div>
-                                    <div class="checkout-info">
-                                        <a class="btn btn-checkout" href="/thanh-toan">Đặt hàng</a>
-                                        <a class="link-to-shop" href="/shop">Tiếp tục mua hàng<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-
-                            </div><!--end main content area-->
-                        </div><!--end container-->
-
-                    </main> <!--main area-->
-                                                }
-                                                else
-                                                {
-
-                                                    <main id="main" class="">
-                                                        <div id="content" class="content-area page-wrapper" role="main">
-                                                            <div class="row row-main">
-                                                                <div class="large-12 col">
-                                                                    <div class="col-inner">
-                                                                        <div class="woocommerce">
-                                                                            <div class="text-center pt pb">
-                                                                                <div class="woocommerce-notices-wrapper"></div><p class="cart-empty woocommerce-info">Chưa có sản phẩm nào trong giỏ hàng.</p>		<p class="return-to-shop">
-                                                                                    <a class="button primary wc-backward" href="/">
-                                                                                        Quay trở lại cửa hàng
-                                                                                    </a>
-                                                                                </p>
+                        </div>
+                    </section> 
+                                                                    <section class="shopping-cart spad">
+                                                                        <div class="container">
+                                                                            <div class="row">
+                                                                                <div class="col-lg-8">
+                                                                                    <div class="shopping__cart__table">
+                                                                                        <table>
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <th>Sản phẩm</th>
+                                                                                                    <th>Số lượng</th>
+                                                                                                    <th>Thành tiền</th>
+                                                                                                    <th></th>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody class="ListCart">
+                                                                                                @*<li class="pr-cart-item">
+                                                                                                    <div class="product-image">
+                                                                                                        <figure><img src="` + item.logo + `" alt=""></figure>
+                                                                                                    </div>
+                                                                                                    <div class="product-name">
+                                                                                                        <a class="link-to-product" href="/san-pham/`+ item.url + `/` + item.productId + `">` + item.name + `</a>
+                                                                                                    </div>
+                                                                                                    <div class="price-field produtc-price"><p class="price">` + numberWithCommas(item.price) + `&nbsp</p></div>
+                                                                                                    <div class="quantity">
+                                                                                                        <div class="quantity-input">
+                                                                                                            <input type="text" name="product-quatity" id="quantity_` + item.productId + `" value="`+ item.quantity + `" data-max="120" pattern="[0-9]*">
+                                                                                                            <a class="btn btn-increase qty-increase-cart" data-id="` + item.productId + `"></a>
+                                                                                                            <a class="btn btn-reduce qty-decrease-cart" data-id="` + item.productId + `"></a>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="price-field sub-total"><p class="price">` + numberWithCommas(amount) + `&nbsp;</p></div>
+                                                                                                    <div class="delete">
+                                                                                                        <a class="remove removeItem" data-id="` + item.productId + `" class="btn btn-delete" title="">
+                                                                                                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                                                                        </a>
+                                                                                                    </div>
+                                                                                                </li>*@
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                                            <div class="continue__btn">
+                                                                                                <a href="/shop">Tiếp tục mua hàng</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-lg-4">                                                                                    
+                                                                                    <div class="cart__total">
+                                                                                        <h6>Tổng tiền</h6>
+                                                                                        <ul>
+                                                                                            <li>Phí ship <span>Miễn phí</span></li>
+                                                                                            <li>Tổng tiền <span class="lbl_total"></span></li>
+                                                                                        </ul>
+                                                                                        <a href="/thanh-toan" class="primary-btn">Đặt hàng</a>
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div><!-- .col-inner -->
-                                                                </div><!-- .large-12 -->
-                                                            </div><!-- .row -->
-                                                        </div>
-                                                    </main><!-- #main -->
-                                                }
+                                                                    </section> <!-- Shopping Cart Section End -->
+                                                                                }
+                                                                                else
+                                                                                {
+
+                                                                                    <main id="main" class="">
+                                                                                        <div id="content" class="content-area page-wrapper" role="main">
+                                                                                            <div class="row row-main">
+                                                                                                <div class="large-12 col">
+                                                                                                    <div class="col-inner">
+                                                                                                        <div class="woocommerce">
+                                                                                                            <div class="text-center pt pb">
+                                                                                                                <div class="woocommerce-notices-wrapper"></div><p class="cart-empty woocommerce-info">Chưa có sản phẩm nào trong giỏ hàng.</p>		<p class="return-to-shop">
+                                                                                                                    <a class="button primary wc-backward" href="/">
+                                                                                                                        Quay trở lại cửa hàng
+                                                                                                                    </a>
+                                                                                                                </p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div><!-- .col-inner -->
+                                                                                                </div><!-- .large-12 -->
+                                                                                            </div><!-- .row -->
+                                                                                        </div>
+                                                                                    </main><!-- #main -->
+                                                                                }

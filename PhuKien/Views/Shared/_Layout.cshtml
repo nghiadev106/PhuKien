@@ -56,7 +56,7 @@
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
-            <p>Free shipping, 30-day return or refund guarantee.</p>
+            <p>Miễn phí ship, đổi trả sau 30 ngày</p>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -67,23 +67,12 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-7">
                         <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee.</p>
+                            <p>Miễn phí ship, đổi trả sau 30 ngày</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
-                            <div class="header__top__links">
-                                <a href="#">Sign in</a>
-                                <a href="#">FAQs</a>
-                            </div>
-                            <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
-                                </ul>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -92,7 +81,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
-                    <div class="header__logo">
+                    <div class="header__logo" style="padding:0;">
                         <a href="/"><img src="/assets/img/logo.png" alt=""></a>
                     </div>
                 </div>
@@ -102,7 +91,6 @@
                             <li class="active"><a href="/">Trang chủ</a></li>
                             <li><a href="/shop">Shop</a></li>
                             <li><a href="/gio-hang">Giỏ hàng</a></li>
-                            <li><a href="/thanh-toan">Thanh toán</a></li>
                             <li><a href="/tin-tuc">Tin tức</a></li>
                             <li><a href="/lien-he">Liên hệ</a></li>
                         </ul>
@@ -111,7 +99,7 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="/assets/img/icon/search.png" alt=""></a>
-                        <a href="#"><img src="/assets/img/icon/cart.png" alt=""> <span>0</span></a>
+                        <a href="/gio-hang"><img src="/assets/img/icon/cart.png" alt=""> <span class="lbl_number_items_header">0</span></a>
                     </div>
                 </div>
             </div>
@@ -127,21 +115,21 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
-                        <div class="footer__logo">
-                            <a href="#"><img src="/assets/img/footer-logo.png" alt=""></a>
+                        <div class="footer__logo" style="padding;0;">
+                            <a href="#"><img src="/assets/img/logo.png" alt=""></a>
                         </div>
-                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <p>Khách hàng là trọng tâm của mô hình kinh doanh độc đáo của chúng tôi</p>
                         <a href="#"><img src="/assets/img/payment.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
                     <div class="footer__widget">
-                        <h6>Shopping</h6>
+                        <h6>Cửa hàng</h6>
                         <ul>
-                            <li><a href="#">Clothing Store</a></li>
-                            <li><a href="#">Trending Shoes</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Sale</a></li>
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Giỏ hàng</a></li>
+                            <li><a href="#">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -149,10 +137,10 @@
                     <div class="footer__widget">
                         <h6>Shopping</h6>
                         <ul>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Delivary</a></li>
-                            <li><a href="#">Return & Exchanges</a></li>
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Giỏ hàng</a></li>
+                            <li><a href="#">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -160,7 +148,7 @@
                     <div class="footer__widget">
                         <h6>NewLetter</h6>
                         <div class="footer__newslatter">
-                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <p>Gửi thư về cho chúng tôi</p>
                             <form action="#">
                                 <input type="text" placeholder="Your email">
                                 <button type="submit"><span class="icon_mail_alt"></span></button>
@@ -177,7 +165,7 @@
                             Copyright ©
                             <script>
                                 document.write(new Date().getFullYear());
-                            </script>2020
+                            </script>
                             All rights reserved | This template is made with <i class="fa fa-heart-o"
                                                                                 aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         </p>
@@ -192,8 +180,8 @@
     <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
+            <form action="/tim-kiem" class="search-model-form">
+                <input type="text" name="keyword" id="search-input" placeholder="Tìm kiếm.....">
             </form>
         </div>
     </div>
